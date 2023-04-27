@@ -1,22 +1,22 @@
-// Выполнила Мясоедова Алина Вмк-20
+// Р’С‹РїРѕР»РЅРёР»Р° РњСЏСЃРѕРµРґРѕРІР° РђР»РёРЅР° Р’РјРє-20
 #pragma once
 #include <iostream>
 #include <string>
 #include "Human.h"
 using namespace std;
 
-class Lecturer : public Human { //класс унаследован от класса Human
+class Lecturer : public Human { //РєР»Р°СЃСЃ СѓРЅР°СЃР»РµРґРѕРІР°РЅ РѕС‚ РєР»Р°СЃСЃР° Human
 private:
 	/// <summary>
-	/// учебная степень
+	/// СѓС‡РµР±РЅР°СЏ СЃС‚РµРїРµРЅСЊ
 	/// </summary>
 	string academic_degree;					
 	/// <summary>
-	///  название университета
+	///  РЅР°Р·РІР°РЅРёРµ СѓРЅРёРІРµСЂСЃРёС‚РµС‚Р°
 	/// </summary>
 	string name_university;					
 	/// <summary>
-	/// номер аудитории
+	/// РЅРѕРјРµСЂ Р°СѓРґРёС‚РѕСЂРёРё
 	/// </summary>
 	int num_hall;							
 public:
@@ -24,11 +24,11 @@ public:
 	Lecturer(const string& _name, const string& _surname, const string& _patronymic,
 	const int& _age,const int& _weight, const string& _name_u, const int& _number);
 
-	void set_univ(const string& _name_u);			// ввод университета
-	void set_hall(const int& _number);				// ввод номера аудитории
-	void acd_dgr_up();								// присвоение новой учебной степени
-	string get_acd_dgr() const;				// возврат учёной степени
-	string get_univ() const;					// возврат университета
-	int get_hall() const;							// возврат номера аудитории
-	string get_string() const;					// возврат строки с данными
+	void set_univ(const string& _name_u);			// РІРІРѕРґ СѓРЅРёРІРµСЂСЃРёС‚РµС‚Р°
+	void set_hall(const int& _number);				// РІРІРѕРґ РЅРѕРјРµСЂР° Р°СѓРґРёС‚РѕСЂРёРё
+	void acd_dgr_up();								// РїСЂРёСЃРІРѕРµРЅРёРµ РЅРѕРІРѕР№ СѓС‡РµР±РЅРѕР№ СЃС‚РµРїРµРЅРё
+	string get_acd_dgr() const;				// РІРѕР·РІСЂР°С‚ СѓС‡С‘РЅРѕР№ СЃС‚РµРїРµРЅРё
+	string get_univ() const;					// РІРѕР·РІСЂР°С‚ СѓРЅРёРІРµСЂСЃРёС‚РµС‚Р°
+	int get_hall() const;							// РІРѕР·РІСЂР°С‚ РЅРѕРјРµСЂР° Р°СѓРґРёС‚РѕСЂРёРё
+	string get_string() const;					// РІРѕР·РІСЂР°С‚ СЃС‚СЂРѕРєРё СЃ РґР°РЅРЅС‹РјРё
 };
