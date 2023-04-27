@@ -1,4 +1,4 @@
-// Выполнила Мясоедова Алина Вмк-20
+// Р’С‹РїРѕР»РЅРёР»Р° РњСЏСЃРѕРµРґРѕРІР° РђР»РёРЅР° Р’РјРє-20
 #pragma once
 #include <iostream>
 #include <string>
@@ -7,48 +7,48 @@ using namespace std;
 class Human {
 private:
 	/// <summary>
-	/// имя человека
+	/// РёРјСЏ С‡РµР»РѕРІРµРєР°
 	/// </summary>
 	string name;
 	/// <summary>
-	/// фамилия человека
+	/// С„Р°РјРёР»РёСЏ С‡РµР»РѕРІРµРєР°
 	/// </summary>
 	string surname;
 	/// <summary>
-	/// отчество человека
+	/// РѕС‚С‡РµСЃС‚РІРѕ С‡РµР»РѕРІРµРєР°
 	/// </summary>
 	string patronymic;		
 	/// <summary>
-	/// возраст человека
+	/// РІРѕР·СЂР°СЃС‚ С‡РµР»РѕРІРµРєР°
 	/// </summary>
 	int age;	
 	/// <summary>
-	/// вес человека
+	/// РІРµСЃ С‡РµР»РѕРІРµРєР°
 	/// </summary>
 	int weight;                             
 public:
-	// конструктор по умолчанию
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	Human();								
-	// констуктор с параметрами
+	// РєРѕРЅСЃС‚СѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 	Human(const string& _name, const string& _surname, const string& _patronymic, const int& _age, const int& _weight);		
 	
-	void set_name(const string& _name);	// ввод имени
-	void set_surname(const string& _surname);	// ввод фамилии
-	void set_patronymic(const string& _patronymic);	// ввод отчества
-	void set_fuln(const string& _name, const string& _surname, const string& _patronymic);		// ввод инициалов
-	void set_age(const int& _age);				// ввод возраста
-	void set_weight(const int& _weight);          //ввод веса
-	string get_name() const;			// возврат имени
-	string get_surname() const;			// возврат фамилии
-	string get_patronymic() const;			// возврат отчества
-	int get_age() const;					// возврат возраста
-	int get_weight() const;                // возврат веса
-	void add_age(const int& _add_age);				// увеличение возраста
-	void sub_age(const int& _sub_age);				// уменьшение возраста
-	void add_weight(const int& _add_weight);          // увеличение веса
-	void sub_weight(const int& _sub_weight);          //уменьшение веса
+	void set_name(const string& _name);	// РІРІРѕРґ РёРјРµРЅРё
+	void set_surname(const string& _surname);	// РІРІРѕРґ С„Р°РјРёР»РёРё
+	void set_patronymic(const string& _patronymic);	// РІРІРѕРґ РѕС‚С‡РµСЃС‚РІР°
+	void set_fuln(const string& _name, const string& _surname, const string& _patronymic);		// РІРІРѕРґ РёРЅРёС†РёР°Р»РѕРІ
+	void set_age(const int& _age);				// РІРІРѕРґ РІРѕР·СЂР°СЃС‚Р°
+	void set_weight(const int& _weight);          //РІРІРѕРґ РІРµСЃР°
+	string get_name() const;			// РІРѕР·РІСЂР°С‚ РёРјРµРЅРё
+	string get_surname() const;			// РІРѕР·РІСЂР°С‚ С„Р°РјРёР»РёРё
+	string get_patronymic() const;			// РІРѕР·РІСЂР°С‚ РѕС‚С‡РµСЃС‚РІР°
+	int get_age() const;					// РІРѕР·РІСЂР°С‚ РІРѕР·СЂР°СЃС‚Р°
+	int get_weight() const;                // РІРѕР·РІСЂР°С‚ РІРµСЃР°
+	void add_age(const int& _add_age);				// СѓРІРµР»РёС‡РµРЅРёРµ РІРѕР·СЂР°СЃС‚Р°
+	void sub_age(const int& _sub_age);				// СѓРјРµРЅСЊС€РµРЅРёРµ РІРѕР·СЂР°СЃС‚Р°
+	void add_weight(const int& _add_weight);          // СѓРІРµР»РёС‡РµРЅРёРµ РІРµСЃР°
+	void sub_weight(const int& _sub_weight);          //СѓРјРµРЅСЊС€РµРЅРёРµ РІРµСЃР°
 
-   virtual	string get_string() const;	// возврат строки с данными
+   virtual	string get_string() const;	// РІРѕР·РІСЂР°С‚ СЃС‚СЂРѕРєРё СЃ РґР°РЅРЅС‹РјРё
 
 	
 
