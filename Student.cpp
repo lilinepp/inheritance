@@ -1,13 +1,13 @@
-// Выполнила Мясоедова Алина Вмк-20
+// Р’С‹РїРѕР»РЅРёР»Р° РњСЏСЃРѕРµРґРѕРІР° РђР»РёРЅР° Р’РјРє-20
 #include <iostream>
 #include "Student.h"
 using namespace std;
 
-Student::Student() :Human() {				// конструктор по умолчанию
-	num_record = 0;							// нулевой номер зачётной книжки
-	num_course = 0;							// нулевой номер курса
-	group = "-";							// никакая группа
-	status = "-";							// никакой статус
+Student::Student() :Human() {				// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+	num_record = 0;							// РЅСѓР»РµРІРѕР№ РЅРѕРјРµСЂ Р·Р°С‡С‘С‚РЅРѕР№ РєРЅРёР¶РєРё
+	num_course = 0;							// РЅСѓР»РµРІРѕР№ РЅРѕРјРµСЂ РєСѓСЂСЃР°
+	group = "-";							// РЅРёРєР°РєР°СЏ РіСЂСѓРїРїР°
+	status = "-";							// РЅРёРєР°РєРѕР№ СЃС‚Р°С‚СѓСЃ
 }
 
 Student::Student(const string& _name, const string& _surname, const string& _patronymic,
@@ -15,96 +15,96 @@ Student::Student(const string& _name, const string& _surname, const string& _pat
 	const string& _group, const string& _status) 
 	:Human(_name, _surname, _patronymic, _age,_weight) {
 	
-	set_num_rec(_num_rec);						// сеттер номера зачётки
-	set_num_crs(_num_crs);						// сеттер номера курса
-	set_grp(_group);								// сеттер названия группы
-	set_stat(_status);							// сеттер статуса студента
+	set_num_rec(_num_rec);						// СЃРµС‚С‚РµСЂ РЅРѕРјРµСЂР° Р·Р°С‡С‘С‚РєРё
+	set_num_crs(_num_crs);						// СЃРµС‚С‚РµСЂ РЅРѕРјРµСЂР° РєСѓСЂСЃР°
+	set_grp(_group);								// СЃРµС‚С‚РµСЂ РЅР°Р·РІР°РЅРёСЏ РіСЂСѓРїРїС‹
+	set_stat(_status);							// СЃРµС‚С‚РµСЂ СЃС‚Р°С‚СѓСЃР° СЃС‚СѓРґРµРЅС‚Р°
 }
 
-void Student::set_num_rec(const int& _num_rec) {		// сеттер номера зачётки
-	if ((_num_rec > 100000) && (_num_rec < 999999)) {		// если номер шестизначный,
-		num_record = _num_rec;						// тогда записываем
+void Student::set_num_rec(const int& _num_rec) {		// СЃРµС‚С‚РµСЂ РЅРѕРјРµСЂР° Р·Р°С‡С‘С‚РєРё
+	if ((_num_rec > 100000) && (_num_rec < 999999)) {		// РµСЃР»Рё РЅРѕРјРµСЂ С€РµСЃС‚РёР·РЅР°С‡РЅС‹Р№,
+		num_record = _num_rec;						// С‚РѕРіРґР° Р·Р°РїРёСЃС‹РІР°РµРј
 	}
 	else {
-		throw invalid_argument("Неверный формат номера!");
+		throw invalid_argument("РќРµРІРµСЂРЅС‹Р№ С„РѕСЂРјР°С‚ РЅРѕРјРµСЂР°!");
 	}
 }
 
-void Student::set_num_crs(const int& _num_crs) {		// сеттер номера курса
-	if ((_num_crs < 6) && (_num_crs > 0)) {				// если с первого курса по пятый,
-		num_course = _num_crs;						// тогда записываем
+void Student::set_num_crs(const int& _num_crs) {		// СЃРµС‚С‚РµСЂ РЅРѕРјРµСЂР° РєСѓСЂСЃР°
+	if ((_num_crs < 6) && (_num_crs > 0)) {				// РµСЃР»Рё СЃ РїРµСЂРІРѕРіРѕ РєСѓСЂСЃР° РїРѕ РїСЏС‚С‹Р№,
+		num_course = _num_crs;						// С‚РѕРіРґР° Р·Р°РїРёСЃС‹РІР°РµРј
 	}
 	else {
-		throw invalid_argument("Неправильный номер курса!");
+		throw invalid_argument("РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ РЅРѕРјРµСЂ РєСѓСЂСЃР°!");
 	}
 }
 
-void Student::set_nums(const int& _num_rec, const int& _num_crs) {	// совмещённый сеттер
+void Student::set_nums(const int& _num_rec, const int& _num_crs) {	// СЃРѕРІРјРµС‰С‘РЅРЅС‹Р№ СЃРµС‚С‚РµСЂ
 	set_num_rec(_num_rec);
 	set_num_crs(_num_crs);
 }
 
-void Student::set_grp(const string& _group) {				// сеттер группы
-	if (!_group.empty()) {										// empty-если строка не пустая,
-		group = _group;											// тогда записываем
+void Student::set_grp(const string& _group) {				// СЃРµС‚С‚РµСЂ РіСЂСѓРїРїС‹
+	if (!_group.empty()) {										// empty-РµСЃР»Рё СЃС‚СЂРѕРєР° РЅРµ РїСѓСЃС‚Р°СЏ,
+		group = _group;											// С‚РѕРіРґР° Р·Р°РїРёСЃС‹РІР°РµРј
 	}
 	else {
-		throw invalid_argument("Пустая строка группы!");
+		throw invalid_argument("РџСѓСЃС‚Р°СЏ СЃС‚СЂРѕРєР° РіСЂСѓРїРїС‹!");
 	}
 }
 
-void Student::set_stat(const string& _status) {			// сеттер статуса
-	if (!_status.empty()) {									// если строка не пустая,
-		status = _status;									// тогда записываем
+void Student::set_stat(const string& _status) {			// СЃРµС‚С‚РµСЂ СЃС‚Р°С‚СѓСЃР°
+	if (!_status.empty()) {									// РµСЃР»Рё СЃС‚СЂРѕРєР° РЅРµ РїСѓСЃС‚Р°СЏ,
+		status = _status;									// С‚РѕРіРґР° Р·Р°РїРёСЃС‹РІР°РµРј
 	}
 	else {
-		throw invalid_argument("Пустая строка статуса!");
+		throw invalid_argument("РџСѓСЃС‚Р°СЏ СЃС‚СЂРѕРєР° СЃС‚Р°С‚СѓСЃР°!");
 	}
 }
 
-int Student::get_num_rec() const {				// возврат номера зачётки
+int Student::get_num_rec() const {				// РІРѕР·РІСЂР°С‚ РЅРѕРјРµСЂР° Р·Р°С‡С‘С‚РєРё
 	return num_record;
 };
 
-int Student::get_num_crs() const {				// возврат номера курса
+int Student::get_num_crs() const {				// РІРѕР·РІСЂР°С‚ РЅРѕРјРµСЂР° РєСѓСЂСЃР°
 	return num_course;
 }
 
-string Student::get_grp() const {			// возврат названия группы
+string Student::get_grp() const {			// РІРѕР·РІСЂР°С‚ РЅР°Р·РІР°РЅРёСЏ РіСЂСѓРїРїС‹
 	return group;
 }
 
-string Student::get_stat() const {			// возврат статуса
+string Student::get_stat() const {			// РІРѕР·РІСЂР°С‚ СЃС‚Р°С‚СѓСЃР°
 	return status;
 }
 
-void Student::add_crs(const int& v) {								// прибавить курс, если не выходит за пределы
+void Student::add_crs(const int& v) {								// РїСЂРёР±Р°РІРёС‚СЊ РєСѓСЂСЃ, РµСЃР»Рё РЅРµ РІС‹С…РѕРґРёС‚ Р·Р° РїСЂРµРґРµР»С‹
 	if ((num_course + v < 6) && (num_course + v > 0)) {
 		num_course += v;
 	}
 	else {
-		throw invalid_argument("Выход за границы учебного плана при сложении!");
+		throw invalid_argument("Р’С‹С…РѕРґ Р·Р° РіСЂР°РЅРёС†С‹ СѓС‡РµР±РЅРѕРіРѕ РїР»Р°РЅР° РїСЂРё СЃР»РѕР¶РµРЅРёРё!");
 	}
 }
 
 void Student::sub_crs(const int& v) {
-	if ((num_course - v < 6) && (num_course - v > 0)) {				// вычесть курс, если не выходит за пределы
+	if ((num_course - v < 6) && (num_course - v > 0)) {				// РІС‹С‡РµСЃС‚СЊ РєСѓСЂСЃ, РµСЃР»Рё РЅРµ РІС‹С…РѕРґРёС‚ Р·Р° РїСЂРµРґРµР»С‹
 		num_course -= v;
 	}
 	else {
-		throw invalid_argument("Выход за границы учебного плана при вычитании!");
+		throw invalid_argument("Р’С‹С…РѕРґ Р·Р° РіСЂР°РЅРёС†С‹ СѓС‡РµР±РЅРѕРіРѕ РїР»Р°РЅР° РїСЂРё РІС‹С‡РёС‚Р°РЅРёРё!");
 	}
 }
-string Student::get_string() const {		// формирование строки с данными через абзац
+string Student::get_string() const {		// С„РѕСЂРјРёСЂРѕРІР°РЅРёРµ СЃС‚СЂРѕРєРё СЃ РґР°РЅРЅС‹РјРё С‡РµСЂРµР· Р°Р±Р·Р°С†
 
-	string full = "Имя: " + Human::get_name() + "\n"
-		+ "Фамилия: " + Human::get_surname() + "\n"
-		+ "Отчество: " + Human::get_patronymic() + "\n"
-		+ "Возраст: " + to_string(Human::get_age()) + "\n"
-		+ "Вес: " + to_string(Human::get_weight()) + "\n"
-		+ "Номер зачётки: " + to_string(num_record) + "\n"
-		+ "Номер курса: " + to_string(num_course) + "\n"
-		+ "Группа: " + group + "\n"
-		+ "Статус: " + status;
+	string full = "РРјСЏ: " + Human::get_name() + "\n"
+		+ "Р¤Р°РјРёР»РёСЏ: " + Human::get_surname() + "\n"
+		+ "РћС‚С‡РµСЃС‚РІРѕ: " + Human::get_patronymic() + "\n"
+		+ "Р’РѕР·СЂР°СЃС‚: " + to_string(Human::get_age()) + "\n"
+		+ "Р’РµСЃ: " + to_string(Human::get_weight()) + "\n"
+		+ "РќРѕРјРµСЂ Р·Р°С‡С‘С‚РєРё: " + to_string(num_record) + "\n"
+		+ "РќРѕРјРµСЂ РєСѓСЂСЃР°: " + to_string(num_course) + "\n"
+		+ "Р“СЂСѓРїРїР°: " + group + "\n"
+		+ "РЎС‚Р°С‚СѓСЃ: " + status;
 	return full;
 }
