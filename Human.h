@@ -22,34 +22,28 @@ private:
 	/// возраст человека
 	/// </summary>
 	int age;	
-	/// <summary>
-	/// вес человека
-	/// </summary>
-	int weight;                             
+                          
 public:
 	// конструктор по умолчанию
 	Human();								
 	// констуктор с параметрами
-	Human(const string& _name, const string& _surname, const string& _patronymic, const int& _age, const int& _weight);		
+	Human(const string& _name, const string& _surname, const string& _patronymic, const int _age);		
 	
 	void set_name(const string& _name);	// ввод имени
 	void set_surname(const string& _surname);	// ввод фамилии
 	void set_patronymic(const string& _patronymic);	// ввод отчества
 	void set_fuln(const string& _name, const string& _surname, const string& _patronymic);		// ввод инициалов
-	void set_age(const int& _age);				// ввод возраста
-	void set_weight(const int& _weight);          //ввод веса
+	void set_age(const int _age);				// ввод возраста
 	string get_name() const;			// возврат имени
 	string get_surname() const;			// возврат фамилии
 	string get_patronymic() const;			// возврат отчества
 	int get_age() const;					// возврат возраста
-	int get_weight() const;                // возврат веса
-	void add_age(const int& _add_age);				// увеличение возраста
-	void sub_age(const int& _sub_age);				// уменьшение возраста
-	void add_weight(const int& _add_weight);          // увеличение веса
-	void sub_weight(const int& _sub_weight);          //уменьшение веса
+	void add_age(const int _add_age);				// увеличение возраста
+	void sub_age(const int _sub_age);				// уменьшение возраста
 
-   virtual	string get_string() const;	// возврат строки с данными
 
-	
+virtual string tostring() const;	// возврат строки с данными
+
+	//virtual-нужен для переопределения(изменения)метода базового класса при наследовании и использовать его с изменениями в наследнике 
 
 };
