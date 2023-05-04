@@ -4,16 +4,16 @@
 using namespace std;
 
 Student::Student() :Human() {				// конструктор по умолчанию
-	num_record = 0;							// нулевой номер зачётной книжки
-	num_course = 0;							// нулевой номер курса
+	num_record = min_rec;							// нулевой номер зачётной книжки
+	num_course = min_crs;							// нулевой номер курса
 	group = "-";							// никакая группа
 	status = "-";							// никакой статус
 }
 
 Student::Student(const string& _name, const string& _surname, const string& _patronymic,
-	const int&_age, const int& _weight, const int& _num_rec, const int& _num_crs, 
-	const string& _group, const string& _status) 
-	:Human(_name, _surname, _patronymic, _age,_weight) {
+	const int _age,  const int _num_rec, const int _num_crs, 
+	const string &_group, const string& _status) 
+	:Human(_name, _surname, _patronymic, _age) {
 	
 	set_num_rec(_num_rec);						// сеттер номера зачётки
 	set_num_crs(_num_crs);						// сеттер номера курса
@@ -21,8 +21,8 @@ Student::Student(const string& _name, const string& _surname, const string& _pat
 	set_stat(_status);							// сеттер статуса студента
 }
 
-void Student::set_num_rec(const int& _num_rec) {		// сеттер номера зачётки
-	if ((_num_rec > 100000) && (_num_rec < 999999)) {		// если номер шестизначный,
+void Student::set_num_rec(const int _num_rec) {		// сеттер номера зачётки
+	if ((_num_rec > min_rec) && (_num_rec < max_rec)) {		// если номер шестизначный,
 		num_record = _num_rec;						// тогда записываем
 	}
 	else {
@@ -30,8 +30,8 @@ void Student::set_num_rec(const int& _num_rec) {		// сеттер номера �
 	}
 }
 
-void Student::set_num_crs(const int& _num_crs) {		// сеттер номера курса
-	if ((_num_crs < 6) && (_num_crs > 0)) {				// если с первого курса по пятый,
+void Student::set_num_crs(const int _num_crs) {		// сеттер номера курса
+	if ((_num_crs <= max_crs) && (_num_crs >= min_crs)) {				// если с первого курса по пятый,
 		num_course = _num_crs;						// тогда записываем
 	}
 	else {
@@ -39,7 +39,7 @@ void Student::set_num_crs(const int& _num_crs) {		// сеттер номера �
 	}
 }
 
-void Student::set_nums(const int& _num_rec, const int& _num_crs) {	// совмещённый сеттер
+void Student::set_nums(const int _num_rec, const int _num_crs) {	// совмещённый сеттер
 	set_num_rec(_num_rec);
 	set_num_crs(_num_crs);
 }
@@ -78,8 +78,8 @@ string Student::get_stat() const {			// возврат статуса
 	return status;
 }
 
-void Student::add_crs(const int& v) {								// прибавить курс, если не выходит за пределы
-	if ((num_course + v < 6) && (num_course + v > 0)) {
+void Student::add_crs(const int v) {								// прибавить курс, если не выходит за пределы
+	if ((num_course + v < max_crs) && (num_course + v >= min_crs)) {
 		num_course += v;
 	}
 	else {
@@ -87,21 +87,20 @@ void Student::add_crs(const int& v) {								// прибавить курс, е�
 	}
 }
 
-void Student::sub_crs(const int& v) {
-	if ((num_course - v < 6) && (num_course - v > 0)) {				// вычесть курс, если не выходит за пределы
+void Student::sub_crs(const int v) {
+	if ((num_course - v < max_crs) && (num_course - v > min_crs)) {				// вычесть курс, если не выходит за пределы
 		num_course -= v;
 	}
 	else {
 		throw invalid_argument("Выход за границы учебного плана при вычитании!");
 	}
 }
-string Student::get_string() const {		// формирование строки с данными через абзац
+string Student::tostring() const {		// формирование строки с данными через абзац
 
 	string full = "Имя: " + Human::get_name() + "\n"
 		+ "Фамилия: " + Human::get_surname() + "\n"
 		+ "Отчество: " + Human::get_patronymic() + "\n"
 		+ "Возраст: " + to_string(Human::get_age()) + "\n"
-		+ "Вес: " + to_string(Human::get_weight()) + "\n"
 		+ "Номер зачётки: " + to_string(num_record) + "\n"
 		+ "Номер курса: " + to_string(num_course) + "\n"
 		+ "Группа: " + group + "\n"
