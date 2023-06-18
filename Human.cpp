@@ -12,7 +12,7 @@ Human::Human() {								// конструктор по умолчанию
 	
 }
 
-Human::Human(const string& _name, const string& _surname, const string& _patronymic, const int _age) {		// констуктор с входными данными
+Human::Human(const string& _name, const string& _surname, const string& _patronymic, int _age) {		// констуктор с входными данными
 	set_name(_name);								// сеттер для имени
 	set_surname(_surname);								// сеттер для фамилии
 	set_patronymic(_patronymic);								// сеттер для отчества
@@ -52,8 +52,8 @@ void Human::set_fuln(const string& _name, const string& _surname, const string& 
 	set_patronymic(_patronymic);								// сеттер для отчества
 }
 
-void Human::set_age(const int _age) {				// сеттер для возраста
-	if ((_age >= 0) && (_age < 100)) {				// если возраст в диапазоне 0-100,
+void Human::set_age( int _age) {				// сеттер для возраста
+	if ((_age >= 0) && (_age <= 120)) {				// если возраст в диапазоне 0-120,
 		age = _age;								// тогда возраст присваивается
 	}
 	else {
@@ -82,7 +82,7 @@ int Human::get_age() const {						// возврат возраста
 
 
 void Human::add_age(const int _add_age) {					// прибавление к возрасту
-	if ((age + _add_age > 0) && (age + _add_age < 100)) {			// если прибавление не зайдёт за диапазон 0-100,
+	if ((age + _add_age > 0) && (age + _add_age < 120)) {			// если прибавление не зайдёт за диапазон 0-120,
 		age += _add_age;									// тогда прибавляем
 	}
 	else {
@@ -91,7 +91,7 @@ void Human::add_age(const int _add_age) {					// прибавление к во�
 };
 
 void Human::sub_age(const int _sub_age) {					// вычитание из возраста
-	if ((age - _sub_age > 0) && (age - _sub_age < 100)) {			// если вычитание не зайдёт за диапазон 0-100,
+	if ((age - _sub_age > 0) && (age - _sub_age < 120)) {			// если вычитание не зайдёт за диапазон 0-120,
 		age -= _sub_age;									// тогда вычитаем
 	}
 	else {
@@ -101,12 +101,11 @@ void Human::sub_age(const int _sub_age) {					// вычитание из воз�
 
 
 
-string Human::tostring() const {				// формирование строки с данными через абзац
+string Human::tostring() {				// формирование строки с данными через абзац
 
-	string full = "Имя: " + name + "\n"
+	return "Имя: " + name + "\n"
 		+ "Фамилия: " + surname + "\n"
 		+ "Отчество: " + patronymic + "\n"
 		+ "Возраст: " + to_string(age);
-	return full;
 };
 
