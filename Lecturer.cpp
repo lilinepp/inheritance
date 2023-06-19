@@ -3,9 +3,9 @@
 #include "Lecturer.h"
 using namespace std;
 
-const string Lecturer::candidate_sciences = "Кандидат наук"; //константные переменные для хранения данных о научной степени
-const string Lecturer::doctor_sciences = "Доктор наук";
-const string Lecturer::no_sciences = "Нет ученой степени";
+//const string Lecturer::candidate_sciences = "Кандидат наук"; //константные переменные для хранения данных о научной степени
+//const string Lecturer::doctor_sciences = "Доктор наук";
+//const string Lecturer::no_sciences = "Нет ученой степени";
 
 // конструктор по умолчанию
 Lecturer::Lecturer() 
