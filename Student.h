@@ -23,13 +23,14 @@ private:
 	/// текущий статус студента
 	/// </summary>
 	string status;	
-	const static int min_crs = 1; // переменная,для того,чтобы задать минимальный курс.static-не должны зависеть от обычных методов и полей
+	const static int min_crs = 1; // переменная,для того,чтобы задать минимальный курс.
 	const static int max_crs = 6; // переменная,для того,чтобы задать максимальный курс
 	const static int min_rec = 100000; //переменная,для того,чтобы задатьминимальное шестизначное значение номера зачетки
 	const static int max_rec = 999999;  //переменная,для того,чтобы задать максимальное шестизначное значение номера зачетки
 
 public:
 	Student();
+
 	Student(const string& _name, const string& _surname,const string& _patronymic, 
 		int _age, int _num_rec, int _num_crs, 
 		const string& _group, const string& _status);
